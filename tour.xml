@@ -1,0 +1,74 @@
+﻿<krpano version="1.19" title="">
+
+	<include url="skin/vtourskin.xml" />
+	<include url="custom.xml" />
+	<!--
+	    For an alternative skin design either change the <skin_settings> values 
+	    from above or optionally include one of the predefined designs from below.
+	-->
+	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
+	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
+	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
+	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
+	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
+	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
+
+
+	<!-- startup action - load the first scene -->
+	<action name="startup">
+	<!-- <action name="startup" autorun="onstart"> -->
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+		loadscene(get(startscene), null, MERGE);
+		if(startactions !== null, startactions() );
+	</action>
+
+	
+	<scene name="scene_bg" title="bg" onstart="addSpot();" havevrimage="true" thumburl="panos/bg.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="60.542" vlookat="8.991" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/bg.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/bg.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+
+		<image if="webvr.isenabled">
+			<cube url="panos/bg.tiles/vr/pano_%s.jpg" />
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<!-- <hotspot name="spot1" style="stars" ath="85.445" atv="-18.136" url="images/etdx3.png"/>
+		<hotspot name="spot2" style="stars" ath="50.825" atv="34.605" url="images/ghjy3.png"/>
+		<hotspot name="spot3" style="stars" ath="98.765" atv="28.369" url="images/gjyxy3.png"/>
+		<hotspot name="spot4" style="stars" ath="-153.068" atv="3.078" url="images/wings3.png"/>
+		<hotspot name="spot5" style="stars" ath="159.669" atv="8.050" url="images/stem3.png"/>-->
+		<hotspot name="sa1" style="stars-away" ath="160" atv="-30.588" url="images/star1.png"/>
+		<hotspot name="sa2" style="stars-away" ath="-160" atv="-30.588" url="images/star2.png"/>
+		<hotspot name="sa3" style="stars-away" ath="-140" atv="28.588" url="images/star3.png"/>
+		<hotspot name="sa4" style="stars-away" ath="-120" atv="-6.588" url="images/star4.png"/>
+		<hotspot name="sa5" style="stars-away" ath="-100" atv="-16.588" url="images/star1.png"/>
+		<hotspot name="sa6" style="stars-away" ath="-80" atv="38.67" url="images/star2.png"/>
+		<hotspot name="sa7" style="stars-away" ath="-60" atv="-38.67" url="images/star4.png"/>
+		<hotspot name="sa8" style="stars-away" ath="-20" atv="36.67" url="images/star1.png"/> 
+		<hotspot name="sa9" style="stars-away" ath="0" atv="-0.67" url="images/star4.png"/>
+		<hotspot name="sa10" style="stars-away" ath="0" atv="-22.67" url="images/star2.png"/>
+		<hotspot name="sa11" style="stars-away" ath="20" atv="18.67" url="images/star3.png"/>
+		<hotspot name="sa12" style="stars-away" ath="40" atv="-28.67" url="images/star1.png"/> 
+		<hotspot name="sa13" style="stars-away" ath="60" atv="26" url="images/star2.png"/>
+		<hotspot name="sa14" style="stars-away" ath="80" atv="-21.67" url="images/star3.png"/>
+		<hotspot name="sa15" style="stars-away" ath="110" atv="-18.67" url="images/star2.png"/>
+		<hotspot name="sa16" style="stars-away" ath="130" atv="30.67" url="images/star4.png"/>
+		<hotspot name="sa17" style="stars-away" ath="80" atv="70.67" url="images/star3.png"/>
+		<hotspot name="sa18" style="stars-away" ath="-110" atv="80.67" url="images/star2.png"/>
+		<hotspot name="sa19" style="stars-away" ath="30" atv="65.67" url="images/star4.png"/>
+		<hotspot name="sa20" style="stars-away" ath="80" atv="-70.67" url="images/star3.png"/>
+		<hotspot name="sa21" style="stars-away" ath="20" atv="-80.67" url="images/star1.png"/>
+
+		<hotspot name="spot10" style="planet" ath="57.433" atv="-6.588" url="images/ghgjxy.png"/>
+		<hotspot name="spot11" style="planet" ath="-177.55" atv="-18.67" url="images/gh360.png"/>
+		<hotspot name="spot12" style="planet" ath="-49.91" atv="-16.251" url="images/ghrrjy.png"/>
+	</scene>
+</krpano>

@@ -1,0 +1,3 @@
+﻿<script>
+    window.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxd51f631bbd5d9e74&redirect_uri=http%3a%2f%2fweixin.juzhen.com%2fwebServices%2fWeChatRmote.aspx%3fauth%3dtrue%26p%3dGET%26refurl%3dhttp%253a%252f%252fshimao.juzhen01.com%252f2017%252fshimao360%252findex.html&response_type=code&scope=snsapi_base&state=gh_db98c1853c28#wechat_redirect";
+</script>

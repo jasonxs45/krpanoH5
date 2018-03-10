@@ -1,0 +1,557 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>世茂光合教育2.0</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-touch-fullscreen" content="YES" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta http-equiv="Expires" content="-1" />
+	<meta http-equiv="pragram" content="no-cache" />
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<link rel="stylesheet" href="style/reset.css">
+	<link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+	<div class="music"></div>
+	<audio src="images/bgm.mp3" id="bgm" preload loop></audio>
+	<div id="loading" class="loading">
+		<div class="loading-wrapper">
+			<div class="cssload-preloader cssload-loading">
+				<span class="cssload-slice"></span>
+				<span class="cssload-slice"></span>
+				<span class="cssload-slice"></span>
+				<span class="cssload-slice"></span>
+				<span class="cssload-slice"></span>
+				<span class="cssload-slice"></span>
+			</div>
+		</div>
+	</div>
+	<div class="apply">
+		<img src="images/apply.png" alt="" onclick="showAlert('form');" />
+	</div>
+	<div class="form alertbox" id="form">
+		<div class="bg"></div>
+		<div class="alert-wrapper">
+			<div class="alert-panel">
+				<div class="pane">
+					<div class="form-inner">
+						<div class="title">
+							<img src="images/ft1.png" />
+						</div>
+						<div class="fr input">
+							<div class="fh">
+								<img src="images/name.png" alt="" class="name" />
+							</div>
+							<div class="fb">
+								<input type="text" name="" id="name" maxlength="6">
+							</div>
+						</div>
+						<div class="fr input">
+							<div class="fh">
+								<img src="images/tele.png" alt="" class="tel" />
+							</div>
+							<div class="fb">
+								<input type="tel" name="" id="tel" maxlength="11">
+							</div>
+						</div>
+						<div class="fr sfyz">
+							<div class="fh">
+								<img src="images/ft2.png" alt="" />
+							</div>
+							<div class="fb">
+								<label class="radio">
+									<input type="radio" name="sfyz" value="是" />
+									<span class="text">是</span>
+									<span class="box"></span>
+								</label>
+								<label class="radio">
+									<input type="radio" name="sfyz" value="否" />
+									<span class="text">否</span>
+									<span class="box"></span>
+								</label>
+							</div>
+						</div>
+						<div class="fr ngcs">
+							<div class="fh">
+								<img src="images/ft3.png" alt="" />
+							</div>
+						</div>
+						<div class="fr input">
+							<div class="fb">
+								<input type="text" name="city" id="city">
+							</div>
+						</div>
+						<div class="fr favor">
+							<div class="fh">
+								<img src="images/ft4.png" alt="" />
+							</div>
+							<div class="fb">（多选，最多选三项）</div>
+						</div>
+						<div class="multiple-select">
+							<label class="radio checkbox">
+								<input type="checkbox" name="favor" value="儿童大学" />
+								<span class="text">儿童大学</span>
+								<span class="box"></span>
+							</label>
+							<label class="radio checkbox">
+								<input type="checkbox" name="favor" value="光合教育营地" />
+								<span class="text">光合教育营地</span>
+								<span class="box"></span>
+							</label>
+							<label class="radio checkbox">
+								<input type="checkbox" name="favor" value="国际游学营" />
+								<span class="text">国际游学营</span>
+								<span class="box"></span>
+							</label>
+							<label class="radio checkbox">
+								<input type="checkbox" name="favor" value="WINGS英语" />
+								<span class="text">WINGS英语</span>
+								<span class="box"></span>
+							</label>
+							<label class="radio checkbox">
+								<input type="checkbox" name="favor" value="STEM科学" />
+								<span class="text">STEM科学</span>
+								<span class="box"></span>
+							</label>
+							<label class="radio checkbox">
+								<input type="checkbox" name="favor" value="创意美学" />
+								<span class="text">创意美学</span>
+								<span class="box"></span>
+							</label>
+							<label class="radio checkbox">
+								<input type="checkbox" name="favor" value="社区图书馆" />
+								<span class="text">社区图书馆</span>
+								<span class="box"></span>
+							</label>
+							<label class="radio checkbox">
+								<input type="checkbox" name="favor" value="业主沙龙" />
+								<span class="text">业主沙龙</span>
+								<span class="box"></span>
+							</label>
+							<label class="radio checkbox">
+								<input type="checkbox" name="favor" value="社区讲坛" />
+								<span class="text">社区讲坛</span>
+								<span class="box"></span>
+							</label>
+						</div>
+						<div class="btns">
+							<div class="submit">
+								<img src="images/submit.png" alt="" onclick="submitHandler();" />
+							</div>
+							<div class="back">
+								<img src="images/back.png" alt="" onclick="hideAlert('form');" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="subsuc alertbox" id="subsuc">
+		<div class="bg"></div>
+		<div class="alert-wrapper">
+			<div class="alert-panel">
+				<div class="pane">
+					<img src="images/block.png" alt="" class="subsuc-bg">
+					<div class="close">
+						<img src="images/close.png" alt="" />
+					</div>
+					<div class="subsuc-inner">
+						<div class="congra">
+							<img src="images/congra.png" alt="" />
+						</div>
+						<p class="caution">请耐心等待工作人员与您联系！</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="detail alertbox" id="detail">
+		<div class="bg"></div>
+		<div class="alert-wrapper">
+			<div class="alert-panel">
+				<div class="pane">
+					<div class="detail-inner">
+						<div class="title">
+							<img src="" alt="" />
+						</div>
+						<div class="photo">
+							<img src="images/wings2.png" alt="" />
+						</div>
+						<p class="info"></p>
+						<div class="close-btn" onclick="hideAlert('detail')">
+							<img src="images/seeother.png" alt="" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tipbox alertbox" id="tipbox">
+		<div class="bg"></div>
+		<div class="alert-wrapper">
+			<div class="alert-panel">
+				<div class="pane">
+					<img src="images/tips.png" alt="" class="tips-bg">
+					<div class="close">
+						<img src="images/closew.png" alt="" />
+					</div>
+					<div class="subsuc-inner">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="pano" style="width:100%;height:100%;">
+		<script src="tour.js"></script>
+		<noscript>
+			<table style="width:100%;height:100%;">
+				<tr style="vertical-align:middle;">
+					<td>
+						<div style="text-align:center;">ERROR:
+							<br/>
+							<br/>Javascript not activated
+							<br/>
+							<br/>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</noscript>
+	</div>
+
+</body>
+<script src="js/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="js/load.js"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="http://weixin.juzhen.com/WebServices/matrix.weixin.auth.2.3.js"></script>
+<script type="text/javascript" src="http://weixin.juzhen.com/WebServices/matrix.weixin.share.2.1.js"></script>
+<script src="form/AjaxMethods.js" type="text/javascript"></script>
+<script>
+	/**============================================
+						             loading
+	==============================================*/
+	var disW = document.documentElement.clientWidth;
+	var disH = document.documentElement.clientHeight;
+	var predata = [{
+			"name": "loading",
+			"type": "image",
+			"src": "images/loading.gif"
+		},
+		{
+			"name": "on",
+			"type": "image",
+			"src": "images/on.png"
+		},
+		{
+			"name": "off",
+			"type": "image",
+			"src": "images/off.png"
+		}
+	];
+	var data = [
+		{ "name": "apply", "type": "image", "src": "images/apply.png" },
+		{ "name": "back", "type": "image", "src": "images/back.png" },
+		{ "name": "block", "type": "image", "src": "images/block.png" },
+		{ "name": "check1", "type": "image", "src": "images/check1.png" },
+		{ "name": "check2", "type": "image", "src": "images/check2.png" },
+		{ "name": "close", "type": "image", "src": "images/close.png" },
+		{ "name": "congra", "type": "image", "src": "images/congra.png" },
+		{ "name": "cymx1", "type": "image", "src": "images/cymx1.png" },
+		{ "name": "cymx2", "type": "image", "src": "images/cymx2.png" },
+		{ "name": "cymx3", "type": "image", "src": "images/cymx3.png" },
+		{ "name": "etdx1", "type": "image", "src": "images/etdx1.png" },
+		{ "name": "etdx2", "type": "image", "src": "images/etdx2.png" },
+		{ "name": "etdx3", "type": "image", "src": "images/etdx3.png" },
+		{ "name": "ft1", "type": "image", "src": "images/ft1.png" },
+		{ "name": "ft2", "type": "image", "src": "images/ft2.png" },
+		{ "name": "ft3", "type": "image", "src": "images/ft3.png" },
+		{ "name": "ft4", "type": "image", "src": "images/ft4.png" },
+		{ "name": "gh360", "type": "image", "src": "images/gh360.png" },
+		{ "name": "ghgjxy", "type": "image", "src": "images/ghgjxy.png" },
+		{ "name": "ghjy1", "type": "image", "src": "images/ghjy1.png" },
+		{ "name": "ghjy2", "type": "image", "src": "images/ghjy2.png" },
+		{ "name": "ghjy3", "type": "image", "src": "images/ghjy3.png" },
+		{ "name": "ghrrjy", "type": "image", "src": "images/ghrrjy.png" },
+		{ "name": "gjyxy1", "type": "image", "src": "images/gjyxy1.png" },
+		{ "name": "gjyxy2", "type": "image", "src": "images/gjyxy2.png" },
+		{ "name": "gjyxy3", "type": "image", "src": "images/gjyxy3.png" },
+		{ "name": "name", "type": "image", "src": "images/name.png" },
+		{ "name": "seeother", "type": "image", "src": "images/seeother.png" },
+		{ "name": "sqjt1", "type": "image", "src": "images/sqjt1.png" },
+		{ "name": "sqjt2", "type": "image", "src": "images/sqjt2.png" },
+		{ "name": "sqjt3", "type": "image", "src": "images/sqjt3.png" },
+		{ "name": "sqtsg1", "type": "image", "src": "images/sqtsg1.png" },
+		{ "name": "sqtsg2", "type": "image", "src": "images/sqtsg2.png" },
+		{ "name": "sqtsg3", "type": "image", "src": "images/sqtsg3.png" },
+		{ "name": "stem1", "type": "image", "src": "images/stem1.png" },
+		{ "name": "stem2", "type": "image", "src": "images/stem2.png" },
+		{ "name": "stem3", "type": "image", "src": "images/stem3.png" },
+		{ "name": "submit", "type": "image", "src": "images/submit.png" },
+		{ "name": "tele", "type": "image", "src": "images/tele.png" },
+		{ "name": "wings1", "type": "image", "src": "images/wings1.png" },
+		{ "name": "wings2", "type": "image", "src": "images/wings2.png" },
+		{ "name": "wings3", "type": "image", "src": "images/wings3.png" },
+		{ "name": "yzsl1", "type": "image", "src": "images/yzsl1.png" },
+		{ "name": "yzsl2", "type": "image", "src": "images/yzsl2.png" },
+		{ "name": "yzsl3", "type": "image", "src": "images/yzsl3.png" },
+		{ "name": "tips", "type": "image", "src": "images/tips.png" },
+		{ "name": "closew", "type": "image", "src": "images/closew.png" }
+	];
+	Global.loading(predata, data, function () {
+		$('#loading').fadeOut();
+		// videoPlayInit();
+		// document.querySelector('#v1').play();
+		panoStart();
+	});
+	function panoStart() {
+		$('.apply,.music').show();
+		bgm.play();
+		playing = true;
+		littleplanetintro();
+	}
+	/**============================================
+	                    音乐
+	==============================================*/
+	var bgm = document.querySelector('#bgm');
+	var playing = false;
+	document.addEventListener('DOMContentLoaded', function () {
+		function audioAutoPlay() {
+			bgm.play();
+			// bgm.pause();
+			document.addEventListener("WeixinJSBridgeReady", function () {
+				bgm.play();
+				// bgm.pause();
+			}, false);
+			playing = false;
+		}
+		audioAutoPlay();
+	});
+	document.addEventListener('touchmove',function(e){
+			event.preventDefault();
+		},false)
+	$('.music').click(function () {
+		if (playing) {
+			bgm.pause();
+			playing = false;
+			$(this).addClass('off')
+		} else {
+			bgm.play();
+			playing = true;
+			$(this).removeClass('off')
+		}
+	})
+	/**============================================
+		                    全景
+		==============================================*/
+	embedpano({
+		swf: "tour.swf",
+		xml: "tour.xml",
+		target: "pano",
+		html5: "auto",
+		mobilescale: 1.0,
+		passQueryParameters: true
+	});
+	// 资料
+	var detailArr = [{
+			name: '儿童大学',
+			py: 'etdx',
+			coordinates: {
+				ath: 87.356,
+				atv: -14.790
+			},
+			info: '英国儿童大学在中国的教学基地，修满一定学分的学员，可以在“专属护照”上面盖章积学分，为留学简历增光添彩。'
+		},
+		{
+			name: '光合教育营地',
+			py: 'ghjy',
+			coordinates: {
+				ath: 33.935,
+				atv: 31.924
+			},
+			info: '世茂为小业主们搭建的光合素质拓展平台，以体验式学习的方式，让孩子们深度探索自己、发现世界，达到生理、心理、社交能力等方面的成长。'
+		},
+		{
+			name: '国际游学营',
+			py: 'gjyxy',
+			coordinates: {
+				ath: 93.517,
+				atv: 30.320
+			},
+			info: '整合国际化体育资源，以训练营形式进行跨国文化交流，开阔视野，提升个人素质。'
+		},
+		{
+			name: 'WINGS英语',
+			py: 'wings',
+			coordinates: {
+				ath: -155.828,
+				atv: 11.621
+			},
+			info: '浸润式英语教学模式，通过营造浓厚的双语环境，将英语与游戏融为一体，调动孩子的学习积极性。'
+		},
+		{
+			name: 'STEM科学',
+			py: 'stem',
+			coordinates: {
+				ath: 157.825,
+				atv: 8.318
+			},
+			info: '起源于美国，将理论解读与手工制作、游戏等方式相结合，是一门集科学、技术、工程、数学的跨领域综合素质教育。'
+		},
+		{
+			name: '创意美学',
+			py: 'cymx',
+			coordinates: {
+				ath: -168.815,
+				atv: 34.271
+			},
+			info: '启发式教学，训练孩子用不同的角度欣赏世界的美，让孩子了解艺术的基本形式。'
+		},
+		{
+			name: '社区图书馆',
+			py: 'sqtsg',
+			coordinates: {
+				ath: -75.297,
+				atv: 3.284
+			},
+			info: '具有公益性、教育性、休闲性等特征的文献信息集散场所，书目含装修设计、少儿教育、生活科普、经济管理、社科人文、文学艺术等种类。'
+		},
+		{
+			name: '业主沙龙',
+			py: 'yzsl',
+			coordinates: {
+				ath: -36.351,
+				atv: -13.572
+			},
+			info: '围绕业主共同兴趣（如摄影、育儿）为主题，定期开展的业主交流聚会，分享知识财富的同时，促进邻里关系及社区活动氛围。'
+		},
+		{
+			name: '社区讲坛',
+			py: 'sqjt',
+			coordinates: {
+				ath: -67.338,
+				atv: -22.816
+			},
+			info: '邀请在某一领域有建树的业主为主讲人，定期开展的讲座活动。分享哲学、历史、文化等相关方面的专业知识，为业主提供交流与学习的平台。'
+		}
+	]
+
+	function showDetail(index) {
+		showAlert('detail');
+		$('.detail .title>img').attr('src', 'images/' + detailArr[index].py + '1.png');
+		$('.detail .photo>img').attr('src', 'images/' + detailArr[index].py + '2.png');
+		$('.detail .info').html(detailArr[index].info);
+	}
+	// 声明krpano对象
+	var krpano = document.getElementById("krpanoSWFObject");
+	// 遍历创建热点
+	function addSpot() {
+		for (var i = 0; i < detailArr.length; i++) {
+			krpano.call("createSpot(hotspot" + i + "," + detailArr[i].coordinates.ath + "," + detailArr[i].coordinates.atv +
+				",'images/" + detailArr[i].py + "3.png'," + i + ")");
+		}
+	}
+
+	function littleplanetintro() {
+		krpano.call('startup();');
+		krpano.call('mylittleplanetintro();');
+		// krpano.call('skin_setup_littleplanetintro();');
+		// krpano.call('switch(plugin[skin_gyro].enabled);');
+	}
+	/**============================================
+	                    表单提交
+	==============================================*/
+	function submitHandler() {
+		var name = $('#name').val();
+		var tel = $('#tel').val();
+		var customer = $('input[name="sfyz"]:checked').val();
+		var city = $('#city').val();
+		var favor = [];
+		var favors = "";
+		$('input[name="favor"]:checked').each(function () {
+		    favor.push(this.value);
+		    favors += this.value + "|";
+		})
+		if (name == '') {
+			toast('姓名不能为空');
+			return false;
+		}
+		if (!name.match(/^[\u4e00-\u9fa5]{2,6}$/i)) {
+			toast("请输入正确格式的姓名!");
+			// $("#name").focus();
+			return false;
+		}
+		if (tel == '') {
+			toast('电话不能为空');
+			return false;
+		}
+		if (!tel.match(/^1([3,4,5,7,8]{1}[0-9]{9})$/i)) {
+			toast("请输入正确格式的电话号码!");
+			// $("#tel").focus();
+			return false;
+		}
+		if (!customer) {
+			toast('请选择是否是世贸业主');
+			return false;
+		}else{
+			if(customer == '是'){
+				if (city == '') {
+					toast('请填写您所在的城市');
+					return false;
+				}
+			}
+		}
+		if (favor.length < 1) {
+			toast('请至少选择一项课程');
+			return false;
+		}
+		if (favor.length > 3) {
+			toast('最多选择三项');
+			return false;
+		}
+		$.ajax({
+		    url: 'Form/formAjax.aspx',
+		    type: 'POST',
+		    data: {
+		        "Type": "formsubimit",
+		        "OpenID": window.sessionStorage.shimao360_OpenID,
+		        "Name": name,
+		        "Tel": tel,
+		        "Costumer": customer,
+		        "City": city,
+		        "Favors": favors,
+		        "Remark": Remark
+		    },
+		    dataType: "json",
+		    async: false,
+		    cache: false,
+		    beforeSend: function () {
+		        showloading('提交中');
+		    },
+		    success: function (res) {
+		        hideloading();
+		        if (res.ErrorCode == 1) {
+		            hideAlert('form');
+		            showAlert('subsuc');
+                }
+		        if (res.ErrorCode == 2) {
+		            alert("手机已被使用！")
+		        }
+		        if (res.ErrorCode == 4) {
+		            alert("您已报过名请不要重复报名！")
+		        }
+		    },
+		    fail: function (res) {
+		        hideloading();
+		    }
+		})
+	}
+</script>
+
+</html>
