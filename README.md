@@ -1,9 +1,14 @@
 # krpanoH5
-基于krpano的简单H5
 
-自己写的内容主要在custom.xml和tour.html的js里面
-# html里面，预先写好可以在xml中使用的js方法（type为JavaScript的action标签内会用到）
-  // 利用krpano对象的call方法 调用xml中使用的内置语法createSpot
+基于 krpano 的简单 H5
+
+自己写的内容主要在 custom.xml 和 tour.html 的 js 里面
+
+# html 里面，预先写好可以在 xml 中使用的 js 方法（type 为 JavaScript 的 action 标签内会用到）
+
+利用 krpano 对象的 call 方法 调用 xml 中使用的内置语法 createSpot
+
+```Javascript
 	// 声明krpano对象
 	var krpano = document.getElementById("krpanoSWFObject");
 	// 遍历创建热点
@@ -13,14 +18,22 @@
 				",'images/" + detailArr[i].py + "3.png'," + i + ")");
 		}
 	}
-// 需要自己控制全景的开始与进场方法
+```
+
+需要自己控制全景的开始与进场方法
+
+```Javascript
 	function littleplanetintro() {
 		krpano.call('startup();');
 		krpano.call('mylittleplanetintro();');
 		// krpano.call('skin_setup_littleplanetintro();');
 		// krpano.call('switch(plugin[skin_gyro].enabled);');
 	}
-# custom.xml中 利用其内置的标签  写好热点的三种样式以及需要用到的action
+```
+
+# custom.xml 中 利用其内置的标签 写好热点的三种样式以及需要用到的 action
+
+```xml
 	<style name="stars" onclick="" style="skin_hotspotstyle" scale=".6" onover="tween(scale,.65);" onloaded="floatup();"
 	       onout="tween(scale,.6);" zorder='10'/>
 	<style name="planet" onclick="" style="skin_hotspotstyle" scale="1" onover="tween(scale,1);"
@@ -57,3 +70,4 @@
 	<action type="Javascript" name="addSpot">
 		addSpot();
 	</action>
+```

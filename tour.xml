@@ -38,7 +38,7 @@
 		<image if="webvr.isenabled">
 			<cube url="panos/bg.tiles/vr/pano_%s.jpg" />
 		</image>
-
+		<hotspot name="animate" style="mc" ath="160" atv="-30.588"/>
 		<!-- place your scene hotspots here -->
 		<!-- <hotspot name="spot1" style="stars" ath="85.445" atv="-18.136" url="images/etdx3.png"/>
 		<hotspot name="spot2" style="stars" ath="50.825" atv="34.605" url="images/ghjy3.png"/>

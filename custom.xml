@@ -59,7 +59,29 @@
 	       onout="tween(scale,1);" zorder='1'/>
 	<style name="stars-away" onclick="" style="skin_hotspotstyle" scale=".6" onover="tween(scale,.6);" onloaded="floatup();"
 	       onout="tween(scale,.6);" />
+	<style name="mc" onclick="" width='120' height='120' scale=".6" visible="false" url="images/mc/man.png" onloaded="do_crop_animation(120,120,6);"/>
 	<!-- 在全景里先定义添加热点的方法，在js中可调用 krpano.call('creatSpot') -->
+<action name="do_crop_animation">
+	<!-- 为热点注册属性 -->
+	set(xframes, calc((imagewidth / %1) BOR 0));
+	set(yframes, calc((imageheight / %2) BOR 0));
+	set(frames, calc(xframes * yframes));
+	set(frame, 0);
+	setinterval(calc('crop_anim_' + name), calc(2.0 / %1),
+		if(loaded,
+			inc(frame);
+			if(frame GE frames, if(onlastframe !== null, onlastframe() ); set(frame,0); );
+			mod(xpos, frame, xframes);
+			div(ypos, frame, xframes);
+			Math.floor(ypos);
+			mul(xpos, %1);
+			mul(ypos, %2);
+			calc(crop, xpos + '|' + ypos + '|%1|%2');
+		  ,
+			clearinterval(calc('crop_anim_' + name));
+		  );
+	  );
+</action>
 	<action name="floatup">
 		tween(oy,-8,1.5,linear);
 		mul(val, random, 1.5);
@@ -122,6 +144,7 @@
 						<!-- 小行星进场完毕 -->
 						showTip();
 						switch(plugin[skin_gyro].enabled);
+						set(hotspot['animate'].visible, true);
 						);
 				  );
 			  );
